@@ -20,7 +20,7 @@ services:
       - webnet
 
   tomcat:
-    image: oksesaneka22/nginx:animation2
+    image: oksesaneka22/nginx:animation3
     container_name: tomcat
     restart: always
     ports:
@@ -29,7 +29,7 @@ services:
       - webnet
 
   nginx:
-    image: nginx:latest
+    image: nginx:latest 
     container_name: nginx
     restart: always
     ports:
