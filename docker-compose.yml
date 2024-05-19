@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   apache:
-    image: oksesaneka22/site2223:latest
+    image: oksesaneka22/nginx
     container_name: apache
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
       - webnet
 
   wordpress:
-    image: oksesaneka22/nginx:latest
+    image: oksesaneka22/nginx:animation2
     container_name: wordpress
     restart: always
     ports:
