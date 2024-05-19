@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   apache:
-    image: oksesaneka22/site223:latest
+    image: oksesaneka22/site2223:latest
     container_name: apache
     restart: always
     ports:
