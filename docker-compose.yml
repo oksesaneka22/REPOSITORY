@@ -1,27 +1,27 @@
 version: '3.8'
 
 services:
-  site:
+  apache:
     image: oksesaneka22/site223:latest
-    container_name: site
+    container_name: apache
     restart: always
     ports:
       - "8081:80"
     networks:
       - webnet
 
-  a1:
+  wordpress:
     image: oksesaneka22/nginx:latest
-    container_name: a1
+    container_name: wordpress
     restart: always
     ports:
       - "8082:80"
     networks:
       - webnet
 
-  a2:
+  tomcat:
     image: oksesaneka22/nginx:animation2
-    container_name: a2
+    container_name: tomcat
     restart: always
     ports:
       - "8083:80"
