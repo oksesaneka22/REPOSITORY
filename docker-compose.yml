@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  apache:
+  site:
     image: oksesaneka22/site223:latest
     container_name: site
     restart: always
@@ -10,7 +10,7 @@ services:
     networks:
       - webnet
 
-  wordpress:
+  a1:
     image: oksesaneka22/nginx:latest
     container_name: a1
     restart: always
@@ -19,7 +19,7 @@ services:
     networks:
       - webnet
 
-  tomcat:
+  a2:
     image: oksesaneka22/nginx:animation2
     container_name: a2
     restart: always
