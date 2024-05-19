@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="ball"></div>
+    </div>
+    <script>
+        const ball = document.getElementById('ball');
+        let posX = 100, posY = 100;
+        let velocityX = 2, velocityY = 2;
+        const ballWidth = ball.offsetWidth, ballHeight = ball.offsetHeight;
+        const container = document.getElementById('container');
+        const containerWidth = container.offsetWidth, containerHeight = container.offsetHeight;
+
+        function update() {
+            posX += velocityX;
+            posY += velocityY;
+
+            // Check for collision with the edges
+            if (posX + ballWidth > containerWidth || posX < 0) {
+                velocityX = -velocityX;
+            }
+            if (posY + ballHeight > containerHeight || posY < 0) {
+                velocityY = -velocityY;
+            }
+
+            // Update ball position
+            ball.style.left = posX + 'px';
+            ball.style.top = posY + 'px';
+
+            requestAnimationFrame(update);
+        }
+
+        update();
+    </script>
+</body>
+</html>
